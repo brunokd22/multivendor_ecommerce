@@ -1,8 +1,16 @@
+import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ui/shared/themeToggle";
 import { ubuntu, quicksand, roboto } from "@/fonts";
+import { UserButton } from "@clerk/nextjs";
 
 export default function Home() {
   return (
-    <div>
+    <div className="p-5">
+      <div className="w-full flex gap-2 justify-end ">
+        <UserButton />
+        <ThemeToggle />
+      </div>
+      <Button variant="destructive">Click Me</Button>
       <h1 className={`text-3xl text-red-500 ${ubuntu.className} font-light`}>
         Hello, Next.js Using Ubuntu! (Weight 700)
       </h1>

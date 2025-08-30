@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ubuntu, quicksand, roboto } from "@/fonts";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
+import { ClerkProvider } from "@clerk/nextjs";
 
 // Collect all font variable classNames into one string
 const fontClasses = [ubuntu.variable, quicksand.variable, roboto.variable].join(
@@ -17,8 +19,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${fontClasses} antialiased`}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`${fontClasses} antialiased`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
