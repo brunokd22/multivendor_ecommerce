@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export default clerkMiddleware(async (auth, req) => {
   // Your custom middleware logic here
-  const protectedRoutes = createRouteMatcher(["/"]);
+  const protectedRoutes = createRouteMatcher(["/dashboard", "/dashboard/(.*)"]);
   if (protectedRoutes(req)) {
     await auth.protect();
   }

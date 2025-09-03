@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@clerk/clerk-sdk-node": "^5.1.6",
+    "@clerk/express": "^1.7.26",
     "@clerk/nextjs": "^6.31.5",
     "@hookform/resolvers": "^5.2.1",
     "@prisma/client": "^6.15.0",
@@ -55,6 +57,7 @@
     "react-resizable-panels": "^3.0.5",
     "recharts": "2.15.4",
     "sonner": "^2.0.7",
+    "svix": "^1.75.0",
     "tailwind-merge": "^3.3.1",
     "vaul": "^1.1.2",
     "zod": "^4.1.3"
